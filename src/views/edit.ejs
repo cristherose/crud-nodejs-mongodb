@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Area Integração Social</title>
+     <!--bootstrap.com/docs/5.1-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4" >
+        <a href="/" class="navbar-brand offset-md-1">  Integração Social</a>
+    </nav>
+
+    <div class= "container">
+        <div class="row">
+            <!--From-->
+            <div class= "col-md-5 offset-md-3">
+                <h1>Edição de atividades</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/edit/<%= task._id %>" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="insert a title" class="form-control" value="<%= task.title %>">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" cols="80" class="form-control" placeholder="insert a 
+                                description"><%= task.description%></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block col-md-3 ">
+                                Update
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>

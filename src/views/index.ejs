@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Area Integração Social</title>
+     <!--bootstrap.com/docs/5.1-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-5 " >
+        <a href="/" class="navbar-brand offset-md-1">  Integração Social</a>
+    </nav>
+
+    <div class= "container">
+        <div class="row">
+            <!--From-->
+            <div class= "col-md-5 offset-md-3">
+                <h1>Registros de atividades</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="insert a title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" cols="80" class="form-control" placeholder="insert a description"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block col-md-3">
+                                Add
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    <!--list-->
+    <div class= "col-md-10"><br>
+        <h3>Lista de Atividades</h3>
+     <table class="table table-bordered table-houver">
+         <thead>
+             <tr>
+                 <th>Nº</th>
+                 <th>Title</th>
+                 <th>Description</th>
+                 <th>Operation</th>
+             </tr>
+         </thead>
+         <tbody>
+             <%  for(var i=0; i< tasks.length; i++) { %>
+                <tr>
+                    <td><%= i+ 1 %></td>
+                    <td><%= tasks[i].title %></td>
+                    <td><%= tasks[i].description %></td>
+                    <td>
+                        <a href="/turn/<%= tasks[i]._id %>" 
+                            class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">
+                            Done
+                        </a>
+                        <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">Delete</a>
+                        <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">Edit</a>
+                    </td>
+                </tr>
+            <% } %>
+         </tbody>
+     </table>
+    </div>
+</body>
+</html>

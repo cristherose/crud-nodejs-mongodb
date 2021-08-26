@@ -19,12 +19,15 @@
                     <div class="card-body">
                         <form action="/add" method="POST">
                             <div class="form-group">
-                                <input type="text" name="title" placeholder="insert a title" class="form-control">
+                                <label for="validationtitle" class="form-label"></label>
+                                <input type="text" name="title" id="validationtitle" placeholder="insert a title" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <textarea name="description" cols="80" class="form-control" placeholder="insert a description"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block col-md-3">
+                                <textarea name="description" cols="80" class="form-control" id="validationTextarea" placeholder="insert a description" required></textarea>
+                                <label for="validationTextarea" class="form-label"></label>
+                                </div>
+                                <div class= "d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block">
                                 Add
                             </button>
                         </form>

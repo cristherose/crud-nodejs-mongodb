@@ -19,13 +19,12 @@
                     <div class="card-body">
                         <form action="/edit/<%= task._id %>" method="POST">
                             <div class="form-group">
-                                <input type="text" name="title" placeholder="insert a title" class="form-control" value="<%= task.title %>">
+                                <textarea name="description" cols="80" class="form-control" id="validationTextarea" 
+                                placeholder="insert a description"required><%= task.description%></textarea>
+                                <label for="validationTextarea" class="form-label"></label>
                             </div>
-                            <div class="form-group">
-                                <textarea name="description" cols="80" class="form-control" placeholder="insert a 
-                                description"><%= task.description%></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block col-md-3 ">
+                            <div class= "d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block">
                                 Update
                             </button>
                         </form>
